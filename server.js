@@ -6,10 +6,13 @@ var path = require('path');
 
 var app = express(); 
 
-app.use(express.static(process.cwd() + '/public')); //use css file
-//var PORT = process.env.PORT || 80;  removed server wont start with this code!!
+app.use(express.static(process.cwd() + '/app/public')); //use css file
 
-var PORT = 3000; 
+var PORT = process.env.PORT || 3000;
+
+ //removed server wont start with this code!!
+
+//var PORT = 3000; 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

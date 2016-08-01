@@ -14,16 +14,9 @@ module.exports = function(app){
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table) 
   // ---------------------------------------------------------------------------
 
-  app.get('/api/tables', function(req, res){
+  app.get('/api/friends', function(req, res){
     res.json(friendData);
   });
-
-/*
-  app.get('/api/waitlist', function(req, res){
-    res.json(waitListData);
-  });   
-
- */
 
   app.post('/api/survey', function(req, res){
 
@@ -41,15 +34,4 @@ module.exports = function(app){
 
   });
 
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don't worry about it!
-
-  app.post('/api/clear', function(req, res){
-    // Empty out the arrays of data
-    tableData = [];
-    waitListData = [];
-
-    console.log(tableData);
-  })
 }
